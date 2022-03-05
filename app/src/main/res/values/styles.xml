@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.SecondTask.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_margin">@dimen/item_text_margin</item>
+        <item name="android:paddingStart">@dimen/item_text_padding_start</item>
+        <item name="layout_constraintVertical_bias">0.5</item>
+        <item name="layout_constraintHorizontal_bias">0</item>
+    </style>
+
+    <style name="Widget.SecondTask.ImageView" parent="Widget.AppCompat.ImageButton">
+
+    </style>
+
+    <style name="TextAppearance.SecondTask.Tittle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SecondTask.Description" parent="TextAppearance.MaterialComponents.Body2">
+
+    </style>
+
+</resources>
