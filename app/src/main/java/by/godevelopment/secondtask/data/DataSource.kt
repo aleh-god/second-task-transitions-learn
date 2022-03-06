@@ -3,36 +3,37 @@ package by.godevelopment.secondtask.data
 import android.util.Log
 import by.godevelopment.secondtask.R
 import by.godevelopment.secondtask.domain.model.ItemModel
+import by.godevelopment.secondtask.presentation.TAG
 import kotlin.random.Random
 
 object DataSource {
     val items = (0..999).map {
         val randomOfThree = Random.nextInt(3)
         ItemModel(
-            id = 0,
+            id = it,
             title = "Tittle $it",
             description = "Description $it",
             drawableSrc = when (randomOfThree) {
-                0 -> R.drawable.ic_baseline_person_24
-                1 -> R.drawable.outline_pets_24
-                2 -> R.drawable.ic_baseline_filter_vintage_24
-                else -> R.drawable.ic_baseline_filter_vintage_24
+                0 -> R.drawable.circular_vintage
+                1 -> R.drawable.circular_image_person
+                2 -> R.drawable.circular_image_pet
+                else -> R.drawable.ic_launcher_background
             }
         )
     }
 
     init {
         val vintage = items.filter {
-            it.drawableSrc == R.drawable.ic_baseline_filter_vintage_24
+            it.drawableSrc == R.drawable.circular_vintage
         }.count()
-        Log.i("secondtask#", "vintage: $vintage")
+        Log.i(TAG, "vintage: $vintage")
         val person = items.filter {
-            it.drawableSrc == R.drawable.ic_baseline_person_24
+            it.drawableSrc == R.drawable.circular_image_person
         }.count()
-        Log.i("secondtask#", "person: $person")
+        Log.i(TAG, "person: $person")
         val pets = items.count {
-            it.drawableSrc == R.drawable.outline_pets_24
+            it.drawableSrc == R.drawable.circular_image_pet
         }
-        Log.i("secondtask#", "pets: $pets")
+        Log.i(TAG, "pets: $pets")
     }
 }

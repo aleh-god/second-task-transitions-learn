@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Second task</string>
+    <string name="btn_text">Exit</string>
 </resources>

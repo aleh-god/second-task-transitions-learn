@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="item_drawable_size">50dp</dimen>
+    <dimen name="item_drawable_big_size">100dp</dimen>
     <dimen name="item_margin">5dp</dimen>
     <dimen name="item_text_margin">1dp</dimen>
     <dimen name="item_text_padding_start">20dp</dimen>
