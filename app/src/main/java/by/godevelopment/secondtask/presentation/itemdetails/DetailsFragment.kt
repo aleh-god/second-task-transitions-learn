@@ -1,13 +1,18 @@
 package by.godevelopment.secondtask.presentation.itemdetails
 
+import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.ViewCompat
+import by.godevelopment.secondtask.R
 import by.godevelopment.secondtask.data.DataSource
 import by.godevelopment.secondtask.databinding.FragmentDetailsBinding
 import by.godevelopment.secondtask.presentation.MainActivity
@@ -25,6 +30,15 @@ class DetailsFragment : Fragment() {
 
     private lateinit var viewModel: DetailsViewModel
 
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            sharedElementEnterTransition = TransitionInflater.from(context)
+                .inflateTransition(R.transition.move)
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +49,11 @@ class DetailsFragment : Fragment() {
         Log.i(TAG, "DetailsFragment: requireArguments() id = $id")
         setupUi(id)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        ViewCompat.setTransitionName(binding.drawable, "slave")
     }
 
     private fun setupUi(id: Int) {

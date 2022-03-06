@@ -4,6 +4,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -12,19 +14,20 @@ import by.godevelopment.secondtask.domain.model.ItemModel
 import by.godevelopment.secondtask.presentation.TAG
 
 class ListItemsAdapter(
-    private val onClickItem: (Int) -> Unit
+    private val onClickItem: (AppCompatImageView, Int) -> Unit
 ): RecyclerView.Adapter<ListItemsAdapter.ItemViewHolder>() {
     inner class ItemViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(itemModel: ItemModel) {
             binding.apply {
                 tittleItem.text = itemModel.title
                 descriptionItem.text = itemModel.description
+                ViewCompat.setTransitionName(drawable, itemModel.id.toString())
                 getDrawable(binding.root.context, itemModel.drawableSrc)?.let {
                     drawable.setImageDrawable(it)
                 }
                 root.setOnClickListener {
                     Log.i(TAG, "ListItemsAdapter: onClick id = ${itemModel.id}")
-                    onClickItem.invoke(itemModel.id)
+                    onClickItem.invoke(drawable, itemModel.id)
                 }
             }
         }

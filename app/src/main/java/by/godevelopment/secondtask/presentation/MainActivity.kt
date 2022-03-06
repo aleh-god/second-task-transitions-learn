@@ -22,16 +22,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
     }
 
-    val onClick: (Int) -> Unit = { id->
-        Log.i(TAG, "MainActivity: onClick id = $id")
-        val bundle = bundleOf(TAG_BUNDLE to id)
-        supportFragmentManager.commit {
-            replace<DetailsFragment>(R.id.fragment_container_view, args = bundle)
-            setReorderingAllowed(true)
-            addToBackStack(null)
-        }
-    }
-
     fun exitApp() {
         finish()
     }
