@@ -1,14 +1,10 @@
 package by.godevelopment.secondtask.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.core.os.bundleOf
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import by.godevelopment.secondtask.R
-import by.godevelopment.secondtask.presentation.itemdetails.DetailsFragment
 import by.godevelopment.secondtask.presentation.listItems.ListFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {

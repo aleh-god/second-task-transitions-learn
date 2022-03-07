@@ -11,20 +11,20 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.SecondTask.Toolbar"
         />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/drawable"
-        android:layout_width="@dimen/item_drawable_big_size"
-        android:layout_height="@dimen/item_drawable_big_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.SecondTask.BigImageView"
         android:src="@drawable/circular_vintage"
         />
 
@@ -37,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/drawable"
         app:layout_constraintBottom_toTopOf="@id/description_item"
         tools:text="Tittle 1000"
+        style="@style/Widget.SecondTask.TextView"
         android:textAppearance="@style/TextAppearance.SecondTask.Tittle"
         />
 
@@ -48,6 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tittle_item"
         tools:text="Description 1000"
+        style="@style/Widget.SecondTask.TextView"
         android:textAppearance="@style/TextAppearance.SecondTask.Description"
         />
 

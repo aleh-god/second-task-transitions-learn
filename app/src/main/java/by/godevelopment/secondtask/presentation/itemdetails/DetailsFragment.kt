@@ -54,6 +54,22 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ViewCompat.setTransitionName(binding.drawable, "slave")
+        setupToolbar()
+    }
+
+    private fun setupToolbar() {
+        binding.toolbar.apply {
+            inflateMenu(R.menu.toolbar_menu)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_back -> {
+                        parentFragmentManager.popBackStack()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
     }
 
     private fun setupUi(id: Int) {

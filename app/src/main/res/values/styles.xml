@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.SecondTask.TextView" parent="Widget.MaterialComponents.TextView">
+    <style name="Widget"></style>
+    <style name="Widget.SecondTask">
+        <item name="android:padding">@dimen/main_padding</item>
+        <item name="android:layout_margin">@dimen/main_margin</item>
+    </style>
+
+    <style name="Widget.SecondTask.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="colorControlNormal">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.SecondTask.RecyclerView">
+        <item name="android:padding">@dimen/rv_padding</item>
+    </style>
+
+    <style name="Widget.SecondTask.Item.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:layout_margin">@dimen/item_text_margin</item>
         <item name="android:paddingStart">@dimen/item_text_padding_start</item>
         <item name="layout_constraintVertical_bias">0.5</item>
         <item name="layout_constraintHorizontal_bias">0</item>
     </style>
 
-    <style name="Widget.SecondTask.ImageView" parent="Widget.AppCompat.ImageButton">
-
+    <style name="Widget.SecondTask.ImageView">
+        <item name="android:layout_width">@dimen/item_drawable_size</item>
+        <item name="android:layout_height">@dimen/item_drawable_size</item>
     </style>
 
-    <style name="TextAppearance.SecondTask.Tittle" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:textStyle">bold</item>
+    <style name="Widget.SecondTask.BigImageView">
+        <item name="android:layout_width">@dimen/item_drawable_big_size</item>
+        <item name="android:layout_height">@dimen/item_drawable_big_size</item>
     </style>
 
-    <style name="TextAppearance.SecondTask.Description" parent="TextAppearance.MaterialComponents.Body2">
-
+    <style name="Widget.SecondTask.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_margin">@dimen/item_text_margin</item>
+        <item name="android:paddingStart">@dimen/item_text_padding_start</item>
     </style>
 
 </resources>
